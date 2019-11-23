@@ -233,7 +233,7 @@ export class StepperOverviewExample implements OnInit {
 
   private limparHotel() {
     this.hotel = {} as Hotel;
-    this.hotel.Nome = "";
+    this.hotel.nome = "";
   }
   saveCli(form: NgForm) {
     console.log(this.cliente.Nascimento)
@@ -423,7 +423,7 @@ export class StepperOverviewExample implements OnInit {
 
   private _filterHotel(Nome: string): Hotel[] {
     const filterValue = Nome.toLowerCase();
-    return this.hoteis.filter(carro => carro.Nome.toLowerCase().indexOf(filterValue) === 0);
+    return this.hoteis.filter(carro => carro.nome.toLowerCase().indexOf(filterValue) === 0);
   }
 
   private _filterVoo(Nome: string): Voo[] {

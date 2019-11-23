@@ -255,7 +255,7 @@
         <mat-autocomplete #auto="matAutocomplete">
           <mat-option *ngFor="let hotel of filteredHotel | async" [value]="hotel.Nome" (onSelectionChange)="selecionarHotel(hotel)">
             <span>{{hotel.id}}</span>
-            <span>{{hotel.Nome}}</span>
+            <span>{{hotel.nome}}</span>
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
@@ -334,8 +334,8 @@
               <tbody>
                 <tr *ngFor="let hotel of hoteis">
                   <td>{{hotel.id}}</td>
-                  <td>{{hotel.Nome}}</td>
-                  <td>{{hotel.nomeCidade}}</td>
+                  <td>{{hotel.nome}}</td>
+                  <td>{{hotel.cidade}}</td>
                   <td>{{hotel.precoDiaria | currency}}</td>
                   <td>
                     <button type="button" class="btn btn-sm btn-sm " style="background: green;color: white;"
@@ -416,7 +416,7 @@
               </div>
               <div class="form-group">
                 <label for="dataHora">Horario</label>
-                <input matInput type="number" [(ngModel)]="voo.dataHora" id="dataHora" name="dataHora"
+                <input matInput type="datetime-local" [(ngModel)]="voo.datahora" id="dataHora" name="dataHora"
                   #dataHora="ngModel" required class="form-control"
                   [ngClass]="{ 'is-invalid': f.submitted && dataHora.invalid }" placeholder="Digite o horário">
                 <div *ngIf="f.submitted && dataHora.invalid" class="invalid-feedback">
@@ -448,7 +448,7 @@
                   <td>{{voo.id}}</td>
                   <td>{{voo.cidadeOrigem}}</td>
                   <td>{{voo.cidadeDestino}}</td>
-                  <td>{{voo.dataHora}}</td>
+                  <td>{{voo.datahora| date: "dd-MM-yyyy HH:mm" }}</td>
                   <td>{{voo.valor | currency}}</td>
                   <td>
                     <button type="button" class="btn btn-sm btn-sm " style="background: green;color: white;"

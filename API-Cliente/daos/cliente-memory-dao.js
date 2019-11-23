@@ -17,7 +17,11 @@ class ClienteMemoryDAO
 
   createCliente (id, Nome, Endereco, Profissao, Nascimento) 
   {
-    this.data.set(id, new Model(id, Nome, Endereco, Profissao, Nascimento))
+    if(id===undefined || id<=0){
+      let indice = this.data.keys();
+      let max = Array.from(indice).sort(function(a, b){return b-a}).get(0);
+    }
+    this.data.set(max, new Model(max, Nome, Endereco, Profissao, Nascimento))
   }
 
   retrieveAll () 

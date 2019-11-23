@@ -1,6 +1,6 @@
 export interface Hotel {
     id :number;
-    Nome:string;
-    nomeCidade:string;
+    nome:string;
+    cidade:string;
     precoDiaria:number;
 }
